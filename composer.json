@@ -12,10 +12,15 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:d34dman/demo-drupal-config.git"
         }
     ],
     "require": {
         "composer/installers": "^1.9",
+        "d34dman/demo-drupal-config": "dev-master",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3"
@@ -23,7 +28,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true
@@ -35,6 +40,9 @@
             }
         },
         "installer-paths": {
+            "config/{$name}": [
+                "type:drupal-config"
+            ],
             "web/core": [
                 "type:drupal-core"
             ],
